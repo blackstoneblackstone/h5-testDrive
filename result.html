@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no, minimal-ui">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>结果</title>
+  <meta name="description" itemprop="description"
+        content="易车网为您提供最新一汽丰田专题报道,了解一汽丰田汽车的动态，是您浏览汽车信息和选爱车的第一网络媒体平台，更多精彩尽在易车网。">
+  <meta name="keywords" content="一汽丰田专题,一汽丰田,新车专题,易车专题,易车网">
+  <meta content="all" name="robots">
+  <meta itemprop="image" content="./img/p.2.jpg">
+  <meta itemprop="name" content="英超之夜 劲享活力盛宴">
+</head>
+<body>
+<h2>实时结果</h2>
+<table>
+  <thead>
+  <th>
+   #
+  </th>
+  <th>
+    报名类别
+  </th>
+  <th>
+    姓名
+  </th>
+  <th>
+    手机号
+  </th>
+  <th>
+    省
+  </th>
+  <th>
+    市
+  </th>
+  <th>
+    购车意向
+  </th>
+  <th>
+    经销商
+  </th>
+  </thead>
+  <tbody id="tb"></tbody>
+</table>
+<script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script>
+  $.ajax({
+    url: "http://www.wexue.top:25000/ttd/result",
+    type: "get",
+    success: function (data) {
+      var h = ""
+      for (var i = 0; i < data.length; i++) {
+        h = h + "<tr><td>" + (i + 1) + "</td>" + "<td>" +
+          data[i].type + "</td>"+ "<td>" +
+          data[i].name + "</td>" + "<td>" + data[i].tel + "</td>" + "<td>"
+          + data[i].sheng + "</td>" + "<td>" + data[i].shi + "</td>" + "<td>" +
+          data[i].yue + "</td>" + "<td>" + data[i].jingxiao + "</td>" + "</tr>"
+      }
+      $("#tb").html(h)
+    }
+  })
+</script>
+<style>
+  table {
+    border: solid 1px #eeeeee;
+    font-size: 14px;
+  }
+
+  td {
+    border: 1px solid #eee;
+    font-size: 12px;
+  }
+
+  th {
+    color: #016df1;
+  }
+
+</style>
+</table>
+<script>
+  var _mtac = {};
+  (function() {
+    var mta = document.createElement("script");
+    mta.src = "http://pingjs.qq.com/h5/stats.js?v2.0.2";
+    mta.setAttribute("name", "MTAH5");
+    mta.setAttribute("sid", "500504168");
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(mta, s);
+  })();
+</script>
+
+</body>
+</html>
